@@ -1,0 +1,69 @@
+{
+    "info": {
+        "name": "School Management API",
+        "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+        "description": "Postman collection for testing the School Management API (addSchool and listSchools)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add School",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Green Valley High School\",\n    \"address\": \"123 Oak Street\",\n    \"latitude\": 28.6139,\n    \"longitude\": 77.209\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/addSchool",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "addSchool"
+                    ]
+                },
+                "description": "Adds a new school to the database"
+            },
+            "response": []
+        },
+        {
+            "name": "List Schools by Proximity",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/listSchools?latitude=28.7041&longitude=77.1025",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "listSchools"
+                    ],
+                    "query": [
+                        {
+                            "key": "latitude",
+                            "value": "28.7041"
+                        },
+                        {
+                            "key": "longitude",
+                            "value": "77.1025"
+                        }
+                    ]
+                },
+                "description": "Fetches and sorts schools based on user's location"
+            },
+            "response": []
+        }
+    ]
+}
